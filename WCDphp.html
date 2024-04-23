@@ -126,7 +126,6 @@ body {
 <?php
     session_start();
 
-    // Array for the called numbers
     $_SESSION['CallCesium'];
 
     $_SESSION['CallPotree'];
@@ -139,13 +138,13 @@ body {
     {
         if (isset($_POST['function']) && $_POST['function'] === 'CallCesium') 
         {
-            if ($_SESSION['CesiumOn'] == false)
+            if ($__SESSION["CesiumOn"] == false)
             {
-                $_SESSION['CesiumOn'] = false;
+                $__SESSION["CesiumOn"] = false;
             }
             else
             {
-                $_SESSION['CesiumOn'] = true;
+                $__SESSION["CesiumOn"] = true;
             }
         }
     }
@@ -154,13 +153,13 @@ body {
     {
         if (isset($_POST['function']) && $_POST['function'] === 'CallPotree') 
         {
-            if ($_SESSION['PotreeOn'] == false)
+            if ($__SESSION["PotreeOn"] == false)
             {
-                $_SESSION['PotreeOn'] = false;
+                $__SESSION["PotreeOn"] = false;
             }
             else
             {
-                $_SESSION['PotreeOn'] = true;
+                $__SESSION["PotreeOn"] = true;
             }
         }
     }
@@ -172,7 +171,7 @@ body {
 </form>
 
 <?php
-if ($_SESSION['CallCesium'] === true)
+if ($__SESSION["CesiumOn"])
 {
     ?><iframe src="https://ion.cesium.com/stories/viewer/?id=4f97610c-6cb5-4ab7-8f74-e0fd2fb5f551" width="100%" height="650" style="box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);"></iframe><?php
 }
@@ -188,7 +187,7 @@ if ($_SESSION['CallCesium'] === true)
 </form>
 
 <?php
-if ($_SESSION['CallPotree'] === true)
+if ($__SESSION["PotreeOn"])
 {
     ?><iframe src="https://haydenjhanc.github.io/GEO409Final/index.html" width="100%" height="650" style="box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);"></iframe><?php
 }
